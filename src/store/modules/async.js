@@ -2,8 +2,6 @@ const initialState = {
   active: false,
   title: "",
   body: "",
-  resolve: null,
-  reject: null,
 };
 
 const state = Object.assign({}, initialState);
@@ -19,16 +17,13 @@ const mutations = {
 };
 
 const actions = {
-  ask: ({ commit }, { title, body }) => {
-    return new Promise((resolve, reject) => {
-      commit("ACTIVATE", {
-        active: true,
-        title,
-        body,
-        resolve,
-        reject,
-      });
+  async ask({ commit }, { title, body }) {
+    await commit("ACTIVATE", {
+      active: true,
+      title,
+      body,
     });
+    return true;
   },
 };
 

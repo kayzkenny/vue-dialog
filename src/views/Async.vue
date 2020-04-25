@@ -20,19 +20,15 @@ export default {
   },
 
   methods: {
-    confirmDestruction() {
-      this.$store
-        .dispatch("AsyncConfirmer/ask", {
+    async confirmDestruction() {
+      try {
+        await this.$store.dispatch("AsyncConfirmer/ask", {
           title: "Really Destroy world?",
           body: "This would suck, dude! Don't be a dick!"
-        })
-        .then(confirmation => {
-          if (confirmation) {
-            this.destroyWorld();
-          } else {
-            this.celebrateSaviour();
-          }
         });
+      } catch (error) {
+        console.log(error);
+      }
     },
     destroyWorld() {
       alert("World destroyed!");

@@ -6,8 +6,8 @@
         <v-card-text v-if="confirmer.body">{{confirmer.body}}}</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" flat @click.native="confirm">Confirm</v-btn>
-          <v-btn color="green darken-1" flat @click.native="cancel">Cancel</v-btn>
+          <v-btn color="green darken-1" text @click.native="confirm">Confirm</v-btn>
+          <v-btn color="green darken-1" text @click.native="cancel">Cancel</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -23,12 +23,11 @@ export default {
   },
   methods: {
     confirm() {
-      console.log(this.confirmer);
-      this.confirmer.resolve(true);
+      alert("World destroyed!");
       this.$store.commit("AsyncConfirmer/DEACTIVATE");
     },
     cancel() {
-      this.confirmer.resolve(false);
+      alert("World saved by our hero!!");
       this.$store.commit("AsyncConfirmer/DEACTIVATE");
     }
   }
