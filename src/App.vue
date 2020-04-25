@@ -1,21 +1,14 @@
 <template>
   <div id="app">
     <v-app light>
-      <ConfirmDialog />
-      <Hello />
+      <router-view />
     </v-app>
   </div>
 </template>
 
 <script>
-import ConfirmDialog from "./components/confirmDialog.vue";
-import Hello from "./components/Hello.vue";
 export default {
-  name: "app",
-  components: {
-    Hello,
-    ConfirmDialog
-  }
+  name: "app"
 };
 </script>
 

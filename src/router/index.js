@@ -11,9 +11,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/asyncdialog",
-    name: "AsyncDialog",
-    component: () => import("../views/AsyncDialog.vue"),
+    path: "/async",
+    name: "Async",
+    component: () => import("../views/Async.vue"),
   },
 ];
 

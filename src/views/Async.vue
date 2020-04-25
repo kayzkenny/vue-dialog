@@ -1,21 +1,28 @@
 <template>
   <div class="hello">
+    <AsyncDialog />
     <v-btn color="error" @click.native.prevent="confirmDestruction">DESTROY WORLD</v-btn>
   </div>
 </template>
 
 <script>
+import AsyncDialog from "../components/asyncDialog";
 export default {
-  name: "hello",
+  name: "Async",
   data() {
     return {
       msg: "Welcome to Your Vue.js App"
     };
   },
+
+  components: {
+    AsyncDialog
+  },
+
   methods: {
     confirmDestruction() {
       this.$store
-        .dispatch("Confirmer/ask", {
+        .dispatch("AsyncConfirmer/ask", {
           title: "Really Destroy world?",
           body: "This would suck, dude! Don't be a dick!"
         })
