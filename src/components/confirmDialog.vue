@@ -18,18 +18,18 @@
 export default {
   computed: {
     confirmer() {
-      return this.$store.state.confirmer;
+      return this.$store.state.Confirmer;
     }
   },
   methods: {
     confirm() {
       console.log(this.confirmer);
       this.confirmer.resolve(true);
-      this.$store.commit("confirmer/DEACTIVATE");
+      this.$store.commit("Confirmer/DEACTIVATE");
     },
     cancel() {
       this.confirmer.resolve(false);
-      this.$store.commit("confirmer/DEACTIVATE");
+      this.$store.commit("Confirmer/DEACTIVATE");
     }
   }
 };

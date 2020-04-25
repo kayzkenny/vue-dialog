@@ -15,7 +15,7 @@ export default {
   methods: {
     confirmDestruction() {
       this.$store
-        .dispatch("confirmer/ask", {
+        .dispatch("Confirmer/ask", {
           title: "Really Destroy world?",
           body: "This would suck, dude! Don't be a dick!"
         })
